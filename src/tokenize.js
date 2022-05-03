@@ -34,10 +34,24 @@ const tokenize = (input) => {
     }
 
     if (isLetter(char)) {
-
-      tokens.push({type: 'Name', value: char})
+      let symbol = char;
+      while(isLetter(input[cursor+1])){
+        symbol += input[cursor+1];
+        ++cursor;
+      }
+      tokens.push({type: 'Name', value: symbol})
       cursor++;
       continue;
+    }
+    if(isQuote(char)){
+      let str = '';
+      while(!isQuote(input[++cursor])){
+        str += input[cursor]
+
+      }
+      tokens.push({type:'String',value:str})
+      cursor++;
+      continue
     }
     throw new Error(`${char} is not valid`)
   }
