@@ -19,9 +19,30 @@ const tokenize = (input) => {
 
     if (isWhitespace(char)) {
       cursor++;
+      continue;
     }
-    return tokens;
+
+    if (isNumber(char)) {
+      let num = char;
+      while (isNumber(input[cursor+1])){
+        num += input[cursor+1];
+        cursor++;
+      }
+      tokens.push({type: 'Number', value: parseInt(num,10)})
+      cursor++;
+      continue;
+    }
+
+    if (isLetter(char)) {
+
+      tokens.push({type: 'Name', value: char})
+      cursor++;
+      continue;
+    }
+    throw new Error(`${char} is not valid`)
   }
+    return tokens;
+
 };
 
 module.exports = { tokenize };
