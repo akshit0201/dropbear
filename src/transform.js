@@ -8,12 +8,14 @@ const transform = node => {traverse(node,{
             }
         }
     }
-})};
+})
+return node
+};
 
 const specialForms = {
     set(node){
         const [identifier,assign] = node.arguments
-        node.type = "VariableDeclaration"
+        node.type = 'vardec'
         node.identifier  = identifier
         node.assign = assign
         delete node.name

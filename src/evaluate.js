@@ -9,11 +9,17 @@ const apply = (node) => {
     }
     return fn(...args)
 }
+const  set = node => {
+    environment[node.identifier.name] = node.assign.value
+    console.log(node.assign.value)
+
+}
 const getId = node => {
     if(environment[node.name]) return environment[node.name]
     throw new ReferenceError(`${node.name} is not an identifier`)
 }
 const evaluate = (node) => {
+    if(node.type === 'vardec') return set(node)
     if(node.type === "CallExpression") return apply(node)
     if(node.type === "Identifier") return getId(node)
     if(node.value) return node.value
