@@ -1,21 +1,24 @@
-# Welcome to the [Building Your Own Programming Language](https://frontendmasters.com/courses/programming-language/) course!
+#Dropbear 
 
-## Getting started
+![image](examples/image.jpg)
+## About
 
-Before starting the course, please have [VSCode](https://code.visualstudio.com/) or another code editor installed. Make sure to install the testing framework [jest](https://jestjs.io/docs/en/getting-started).
+Dropbear is a [LISP](https://en.wikipedia.org/wiki/Lisp_(programming_language)) based programming language. The test for various features are written in  [jest](https://jestjs.io/docs/en/getting-started).
 
-`yarn add --dev jest`
+To code in Dropbear just type
+`npm run` in the terminal inside the root directory.
 
-OR
+`npm link` command inside the root directory can globalize the language on the local machine. The user can then type `dropbear` to access the CLI.
 
-`npm install --save-dev jest`
+At the moment basic arthimetic operations and variable assignment is supported.
 
-Each branch covers different concepts discussed during the course.
-Branches [4](https://github.com/stevekinney/dropbear/tree/4-parsing-solutions) and [6](https://github.com/stevekinney/dropbear/tree/6-max-method-in-environment-solution) have solutions to exercises covered in previous branches.
-the final version of the project is on branch [10-finalversion](https://github.com/stevekinney/dropbear/tree/10-finalversion).
+Example:
 
-This course was written and recorded by Frontend Masters. The code here is licensed under the Apache 2.0 license and the course notes are licensed under the Creative Commons Attribution-NonCommercial 4.0 International license.
+`(add 5 (subtract 2 1))` returns 6
 
+`(set x 5)` sets x to 5
+
+The given language is written in JavaScript and can be transpiled to JavaScript using Babel. 
 ## See a Bug or Typo?
 
 Pull requests are welcome!
