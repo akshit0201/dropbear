@@ -10,7 +10,7 @@ To code in Dropbear just type
 
 `npm link` command inside the root directory can globalize the language on the local machine. The user can then type `dropbear` to access the CLI.
 
-At the moment basic arthimetic operations and variable assignment is supported.
+At the moment basic arthimetic operations and variable assignment are supported.
 
 Example:
 
