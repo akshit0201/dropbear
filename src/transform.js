@@ -15,7 +15,7 @@ return node
 const specialForms = {
     set(node){
         const [identifier,assign] = node.arguments
-        node.type = 'vardec'
+        node.type = 'VariableDeclaration'
         node.identifier  = identifier
         node.assign = assign
         delete node.name

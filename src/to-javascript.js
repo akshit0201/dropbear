@@ -7,6 +7,16 @@ const babelVisitor = {
       node.callee = { type: 'Identifier', name: node.name };
     },
   },
+  VariableDeclaration:{
+    enter({node}) {
+      node.kind = 'let'
+      node.declarations= [{
+        type: 'VariableDeclarator',
+        id: node.identifier,
+        init: node.assign
+      }]
+    }
+  }
 };
 
 const toJavaScript = ast => {
